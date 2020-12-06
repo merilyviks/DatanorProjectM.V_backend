@@ -1,5 +1,6 @@
 package com.example.weather.classes;
 
+
 public class CityNames {
     private int id;
     private String cityName;

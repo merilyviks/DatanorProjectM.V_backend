@@ -25,9 +25,9 @@ public class CityNamesRepository {
     }
 
     public List<CityNames> getAllCityNames(){
-        String sql = "SELECT city_name FROM city_names";
-        List<CityNames> cityNamesList = jdbcTemplate.query(sql, new CityNamesRowMapper());
-        return cityNamesList;
+        String sql = "SELECT * FROM city_names";
+       Object miski= jdbcTemplate.query(sql, new CityNamesRowMapper());
+        return (List<CityNames>) miski;
     }
 
     public void setWeatherInformation(int cityId, int temperature, int windSpeed, int humidity, int dateTime) {

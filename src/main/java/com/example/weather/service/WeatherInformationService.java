@@ -17,6 +17,7 @@ public class WeatherInformationService {
     @Autowired
     private WeatherInformationRepository weatherInformationRepository;
 
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -24,6 +25,10 @@ public class WeatherInformationService {
         String cityName = cityNames.getCityName();
         cityNamesRepository.addCityName(cityName);
         //restTemplate.
+    }
+
+    public List<CityNames> getAllCityNames() {
+        return cityNamesRepository.getAllCityNames();
     }
 
     public void getInformationfromAPI() {
