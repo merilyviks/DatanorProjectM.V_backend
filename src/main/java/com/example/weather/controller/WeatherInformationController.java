@@ -2,6 +2,7 @@ package com.example.weather.controller;
 
 
 import com.example.weather.classes.CityNames;
+import com.example.weather.classes.WeatherInformation;
 import com.example.weather.service.WeatherInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +27,14 @@ public class WeatherInformationController {
     }
 
     @CrossOrigin
-    @DeleteMapping ("deleteCity")
-    public void deleteCityName (String cityName) {
+    @GetMapping ("getallweatherinfo")
+    public List<WeatherInformation> getAllWeatherInfo () {
+        return weatherInformationService.getAllWeatherInfo();
+    }
+
+    @CrossOrigin
+    @DeleteMapping ("deletecity")
+    public void deleteCityName (@RequestParam String cityName) {
         weatherInformationService.deleteCityName(cityName);
     }
 

@@ -4,7 +4,6 @@ package com.example.weather.repository;
 import com.example.weather.classes.CityNames;
 import com.example.weather.rowmapper.CityNamesRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -26,14 +25,14 @@ public class CityNamesRepository {
 
     public List<CityNames> getAllCityNames(){
         String sql = "SELECT * FROM city_names";
-       Object miski= jdbcTemplate.query(sql, new CityNamesRowMapper());
-        return (List<CityNames>) miski;
+        return jdbcTemplate.query(sql, new CityNamesRowMapper());
     }
 
     public void deleteCityName(String cityName) {
-        String sql = "DELETE FROM city_names WHERE city_name=(:muutuja)";
+        String sql = "DELETE FROM city_names WHERE city_name=(:value1)";
         Map<String, Object> cityNameMap= new HashMap<>();
         cityNameMap.put("value1", cityName);
+        jdbcTemplate.update(sql, cityNameMap);
 
     }
 
