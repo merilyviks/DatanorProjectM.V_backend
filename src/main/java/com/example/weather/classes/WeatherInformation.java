@@ -1,14 +1,15 @@
 package com.example.weather.classes;
 
-import java.time.LocalTime;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 public class WeatherInformation {
     private int id;
     private int cityId;
-    private int temperature;
-    private int windSpeed;
-    private int humidity;
-    private LocalTime dateTime;
+    private BigDecimal temperature;
+    private BigDecimal windSpeed;
+    private BigDecimal humidity;
+    private Timestamp dateTime;
 
     public int getId() {
         return id;
@@ -26,35 +27,35 @@ public class WeatherInformation {
         this.cityId = cityId;
     }
 
-    public int getTemperature() {
+    public BigDecimal getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public void setTemperature(BigDecimal temperature) {
         this.temperature = temperature;
     }
 
-    public int getWindSpeed() {
+    public BigDecimal getWindSpeed() {
         return windSpeed;
     }
 
-    public void setWindSpeed(int windSpeed) {
+    public void setWindSpeed(BigDecimal windSpeed) {
         this.windSpeed = windSpeed;
     }
 
-    public int getHumidity() {
+    public BigDecimal getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(int humidity) {
+    public void setHumidity(BigDecimal humidity) {
         this.humidity = humidity;
     }
 
-    public LocalTime getDateTime() {
+    public Timestamp getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalTime dateTime) {
+    public void setDateTime(Timestamp dateTime) {
         this.dateTime = dateTime;
     }
 }

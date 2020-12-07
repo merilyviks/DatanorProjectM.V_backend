@@ -11,7 +11,7 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="city_name" type="text">
-                <constraints nullable="false" primaryKey="false" unique="false"/>
+                <constraints nullable="false" primaryKey="false" unique="true"/>
             </column>
         </createTable>
 
@@ -24,13 +24,13 @@
                              references="city_names(id)"
                              primaryKey="false" unique="false"/>
             </column>
-            <column name="temperature" type="integer">
+            <column name="temperature" type="numeric">
                 <constraints nullable="false" primaryKey="false" unique="true"/>
             </column>
-            <column name="wind_speed" type="integer">
+            <column name="wind_speed" type="numeric">
                 <constraints nullable="false" primaryKey="false" unique="false"/>
             </column>
-            <column name="humidity" type="integer">
+            <column name="humidity" type="numeric">
             <constraints nullable="false" primaryKey="false" unique="false"/>
             </column>
             <column name="date_time" type="datetime">

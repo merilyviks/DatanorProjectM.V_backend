@@ -30,12 +30,14 @@ public class CityNamesRepository {
         return (List<CityNames>) miski;
     }
 
-    public void setWeatherInformation(int cityId, int temperature, int windSpeed, int humidity, int dateTime) {
-        String sql = "INSERT INTO account_nr (city_id, temperature, wind_speed, humidity, date_time)"
-                                    + "VALUES (:muutuja1, :muutuja2, :muutuja3, :muutuja4, :muutuja5)";
+    public void deleteCityName(String cityName) {
+        String sql = "DELETE FROM city_names WHERE city_name=(:muutuja)";
         Map<String, Object> cityNameMap= new HashMap<>();
-        cityNameMap.put("value1", cityId);
+        cityNameMap.put("value1", cityName);
+
     }
+
+
 
 
 

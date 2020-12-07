@@ -25,6 +25,12 @@ public class WeatherInformationController {
         return weatherInformationService.getAllCityNames();
     }
 
+    @CrossOrigin
+    @DeleteMapping ("deleteCity")
+    public void deleteCityName (String cityName) {
+        weatherInformationService.deleteCityName(cityName);
+    }
+
 
 
 
